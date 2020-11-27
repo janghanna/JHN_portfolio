@@ -18,4 +18,16 @@ $(function () {
     }else{
         $('.slick-arrow').hide();
     }
+
+    var slider = $('.slide');
+    slider.on('mousewheel', (function(e) {
+        e.preventDefault();
+   
+        if (e.originalEvent.deltaY < 0) {
+          $(this).slick('slickNext');
+        } else {
+          $(this).slick('slickPrev');
+        }
+   }));
+   
 });
