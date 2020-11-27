@@ -1,0 +1,994 @@
+@import url("common.css");
+
+@keyframes shake{
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes type{
+    0%{
+        color: #fff;
+    }
+    50%{
+        color:#000;
+    }
+    100%{
+    color:#000;
+    }
+}
+
+@keyframes count{
+    0%{
+        color: white;
+    }
+    20%{
+        color:#e098c8;
+    }
+    50%{
+        color: #d3b7dc;
+    }
+    70%{
+        color: #b7b9dc;
+    }
+    100%{
+        color: #8657C4;
+    }
+}
+
+@keyframes font{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+body {
+    margin: 0;
+}
+body.active{background: #414350;}
+//그라데이션 컬러
+//#e098c8 #d3b7dc #b7b9dc
+// background: linear-gradient(to bottom, #e098c8, #d3b7dc, #b7b9dc);
+// background-origin: border-box;
+//border-image: linear-gradient(#e098c8, #d3b7dc, #b7b9dc) 1 / 5px;
+
+.index {
+    width: 100%;
+    height: 100vh;
+    transform-style: preserve-3d;
+    overflow: hidden;  
+
+    .main {
+        //  display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        background: white;
+        position: relative;
+        transition: .5s;
+        transform: perspective(1000) rotateY(0deg);
+
+        .profile {
+            width: 100%;
+
+            .my_self {
+                width: 100%;
+
+                .left {
+                    position: fixed;
+                    left: 80px;
+                    top: 0;
+                    z-index: 1;
+                    width: 35%;
+                    height: 100%;
+                    border-right: 1px solid #414350;
+
+                    .logo {
+                        :hover{
+                            animation: shake 0.5s infinite;
+                        }    
+                        h1 {
+                            color: #8657C4;
+                            font-size: 180px;
+                            position: absolute;
+                            left: 10%;
+                            bottom: 14%;
+                            margin: 0;
+                        }
+
+                        p {
+                            color: #8657C4;
+                            font-size: 180px;
+                            position: absolute;
+                            left: 20%;
+                            bottom: 0;
+                            margin: 0;
+                        }
+                    }
+
+                    .con {
+                        width: 100%;
+                        text-align: left;
+
+                        .img {
+                            margin: 0 auto;
+                            width: 100%;
+                            margin-top: 130px;
+                            position: relative;
+
+                            img {
+                                width:240px;
+                                margin-left: 250px;
+                                box-shadow: 0px 0px 10px rgba(148, 71, 241, 0.5);
+                            }                          
+                            p{
+                                margin: 0 atuo;
+                                width: 100%;
+                                text-align: center;
+                                font-size: 22px;
+
+                            }
+                            p:after{
+                                content: '|';
+                                animation: type 1s steps(1, end) infinite;
+                            }
+                        }                       
+                    }
+                }
+
+                .dot{
+                    position: absolute;
+                    right: 3%;
+                    top: 25%;
+                    a{
+                        display: block;
+                        margin: 15px 0;
+                        width: 8px; height: 8px;
+                        border: 1px solid #8657C4;
+                        background: #8657C4;
+                        border-radius: 50%;
+                        opacity: 0.5;
+                    }
+                 
+                    a.active{
+                        background: #8657C4;
+                        opacity:1;
+                    }
+                }
+
+                .right {
+                    float: right;
+                    width: 55%;
+                    height: 100vh;
+                    overflow: auto;
+
+                    .mbti {
+                        padding: 10% 0 0 0;
+
+                        article {
+                            width: 90%;
+                            margin: 0;
+
+                            h2 {
+                                font-size: 30px;
+                                color: #414350;
+                                margin-bottom: 0;
+                            }
+
+                            h2::after {
+                                content: '';
+                                display: block;
+                                width: 300px;
+                                height: 2px;
+                                background: #8657c4;
+                                margin: 10px 0;
+                            }
+
+                            small {
+                                font-size: 20px;
+                                color: #414350;
+                            }
+
+                            .img_box {
+                                width: 100%;
+                                border: 1px solid #ddd;
+                                margin: 30px 0;
+                                padding: 30px 0 50px 0;
+                                text-align: center;
+
+                                img {
+                                    width: 400px;
+                                    margin: 40px 0;
+                                }
+
+                                ul {
+                                    width: 60%;
+                                    margin: 0 auto;
+
+                                    li {
+                                        text-align: left;
+                                        list-style: none;
+                                        font-size: 20px;
+                                        color: #414350;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .center {
+                        width: 100%;
+                        overflow: hidden;
+                        padding: 10% 0 0 0;
+                        margin: 30px 0;
+
+                        .edu {
+                            width: 50%;
+                            float: left;
+
+                            article {
+                                width: 100%;
+                                margin: 0;
+
+                                h2 {
+                                    font-size: 30px;
+                                    color: #414350;
+                                    margin-bottom: 0;
+                                }
+
+                                h2::after {
+                                    content: '';
+                                    display: block;
+                                    width: 300px;
+                                    height: 2px;
+                                    background: #8657c4;
+                                    margin: 10px 0;
+                                }
+
+                                ul {
+                                    width: 90%;
+                                    margin: 0;
+                                    padding: 0 10px;
+
+                                    li {
+                                        white-space: pre-line;
+                                        line-height: 1;
+                                        margin-bottom: 20px;
+                                        text-align: left;
+                                        list-style: none;
+                                        font-size: 20px;
+                                        color: #414350;
+                                    }
+                                }
+                            }
+                        }
+
+                        .cer {
+                            width: 50%;
+                            float: right;
+
+                            article {
+                                width: 100%;
+                                margin: 0;
+
+                                h2 {
+                                    font-size: 30px;
+                                    color: #414350;
+                                    margin-bottom: 0;
+                                }
+
+                                h2::after {
+                                    content: '';
+                                    display: block;
+                                    width: 300px;
+                                    height: 2px;
+                                    background: #8657c4;
+                                    margin: 10px 0;
+                                }
+
+                                ul {
+                                    width: 90%;
+                                    margin: 0;
+                                    padding: 0 10px;
+
+                                    li {
+                                        white-space: pre-line;
+                                        line-height: 1;
+                                        margin-bottom: 20px;
+                                        text-align: left;
+                                        list-style: none;
+                                        font-size: 20px;
+                                        color: #414350;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .skill {
+                        padding: 10% 0 0 0;
+                        margin: 30px 0;
+                        article {
+                            width: 90%;
+                            margin: 0;
+
+                            h2 {
+                                font-size: 30px;
+                                color: #414350;
+                                margin-bottom: 0;
+                            }
+
+                            h2::after {
+                                content: '';
+                                display: block;
+                                width: 300px;
+                                height: 2px;
+                                background: #8657c4;
+                                margin: 10px 0;
+                            }
+
+                            figure {
+                                width: 100%;
+                                margin: 30px 0;
+                                position: relative;
+
+                              
+                                div{
+                                    width: 100%;
+                                    img {
+                                        width: 60px;
+                                    }
+                                }
+                                p {
+                                    font-size: 35px;
+                                    color: #8657c4;
+                                    margin: 0;
+                                    position: absolute;
+                                    top: 10%;
+                                    left: 8%;                                    
+                                   
+                                }
+                                figcaption {
+                                    position: absolute;
+                                    top: -35%;
+                                    left: 16%;
+                                    font-size: 20px;
+                                    white-space: pre-line;
+                                   
+                                    color: #414350;
+                                    
+                                }
+                            }
+                        }
+                    }
+
+                    .skill.active figure p{
+                        animation: count ease-in 5s;
+                    }
+                    .skill.active figure figcaption{
+                        animation: font 3s ease-in .5s;
+                    }
+                }
+            }
+        }
+    }
+
+    .main.active {
+        transform: perspective(1000) rotateY(-10deg) translateX(100px);
+        transition: .8s;
+        overflow: hidden;
+    }
+}
+
+@media (max-width:480px){
+    .index{
+        overflow: auto;
+        .main{
+            .profile {
+                width: 90%; 
+                margin: 0 auto;   
+                .my_self {
+                    width: 100%;
+                    position: relative;        
+                    .left {
+                        background: white;
+                        position: static;
+                        z-index: 0;
+                        width: 100%;
+                        height: 100vh;
+                        border-right: none;
+                        border-bottom: none;
+        
+                        .logo {
+                            :hover{
+                                animation: shake 0.5s infinite;
+                            }    
+                            h1 {
+                                color: #8657C4;
+                                font-size: 100px;
+                                position: absolute;
+                                left: 12%;
+                                bottom: 12%;
+                                margin: 0;
+                            }
+        
+                            p {
+                                color: #8657C4;
+                                font-size: 100px;
+                                position: absolute;
+                                left: 23%;
+                                bottom: 0;
+                                margin: 0;
+                            }
+                        }
+        
+                        .con {
+                            width: 100%;
+                            height: 100vh;
+                            .img {
+                                margin: 0 auto;
+                                width: 100%; 
+                                height: 100%;
+                                margin-top:0px;
+                                position: relative;
+        
+                                img {
+                                    width:180px;
+                                    position:absolute;
+                                    left: 55%;
+                                    top: 8%;
+                                    margin-left: 0;
+                                    transform: translateX(-50%);
+                                    box-shadow: 0px 0px 10px rgba(148, 71, 241, 0.5);
+                                }                          
+                                p{
+                                    width: 90%;
+                                    position:absolute;                             
+                                    top: 50%;
+                                    left: 58%;
+                                    transform: translateX(-50%);
+                                    text-align: center;
+                                    font-size: 15px;
+                                }
+                            }                       
+                        }
+                    }
+                    .dot{
+                        display: none;
+                    }
+        
+                    .right {
+                        background:white;
+                        width: 100%;
+                        height: auto;
+                        overflow: auto;
+                        padding: 0;
+                        padding-left: 15%;
+
+                        .mbti {
+                            padding: 0;
+                            margin: 30px 0;
+                            article {
+                                width: 100%;
+                                margin: 0 auto;
+        
+                                h2 {
+                                    font-size: 25px;
+                                    color: #414350;
+                                    margin-bottom: 0;
+                                }
+        
+                                h2::after {
+                                    content: '';
+                                    display: block;
+                                    width: 200px;
+                                    height: 2px;
+                                    background: #8657c4;
+                                    margin: 10px 0;
+                                }
+        
+                                small {
+                                    font-size: 18px;
+                                    color: #414350;
+                                }
+        
+                                .img_box {
+                                    width: 100%;
+                                    border: 1px solid #ddd;
+                                    margin: 20px 0;
+                                    padding: 0;
+                                    text-align: center;
+        
+                                    img {
+                                        width: 220px;
+                                        margin: 20px 0;
+                                    }
+        
+                                    ul {
+                                        width: 100%;
+                                        margin: 0 auto;
+                                        padding: 0;
+        
+                                        li {
+                                            color: #414350;
+                                            text-align: left;
+                                            list-style: none;
+                                            line-height: 2;
+                                            font-size: 10px;
+                                            padding: 0 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+        
+                        .center {
+                            width: 100%;
+                            overflow: auto;
+                            padding: 0;
+                            margin: 0 auto;
+        
+                            .edu {
+                                width: 100%;
+                                margin: 30px 0;
+                                float: none;
+        
+                                article {
+                                    width: 100%;
+                                    margin: 0 auto;
+        
+                                    h2 {
+                                        font-size: 25px;
+                                        color: #414350;
+                                        margin-bottom: 0;
+                                    }
+        
+                                    h2::after {
+                                        content: '';
+                                        display: block;
+                                        width: 200px;
+                                        height: 2px;
+                                        background: #8657c4;
+                                        margin: 10px 0;
+                                    }
+        
+                                    ul {
+                                        width: 90%;
+                                        margin: 0;
+                                        padding: 0 10px;
+        
+                                        li {
+                                            white-space: pre-line;
+                                            line-height: 1;
+                                            margin-bottom: 20px;
+                                            text-align: left;
+                                            list-style: none;
+                                            font-size: 13px;
+                                        }
+                                    }
+                                }
+                            }
+        
+                            .cer {
+                                width: 100%;
+                                float: none;
+                                margin: 30px 0;
+        
+                                article {
+                                    width: 100%;
+                                    margin: 0 auto;
+        
+                                    h2 {
+                                        font-size: 25px;
+                                        color: #414350;
+                                        margin-bottom: 0;
+                                    }
+        
+                                    h2::after {
+                                        content: '';
+                                        display: block;
+                                        width: 200px;
+                                        height: 2px;
+                                        background: #8657c4;
+                                        margin: 10px 0;
+                                    }
+        
+                                    ul {
+                                        width: 90%;
+                                        margin: 0;
+                                        padding: 0 10px;
+        
+                                        li {
+                                            white-space: pre-line;
+                                            line-height: 1;
+                                            margin-bottom: 20px;
+                                            text-align: left;
+                                            list-style: none;
+                                            font-size: 13px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+        
+                        .skill {
+                            width: 100%;
+                            padding: 0;
+                            margin: 30px 0;
+                            article {
+                                width: 100%;
+                                margin: 0 auto;
+        
+                                h2 {
+                                    font-size: 25px;
+                                    color: #414350;
+                                    margin-bottom: 0;
+                                }
+        
+                                h2::after {
+                                    content: '';
+                                    display: block;
+                                    width: 200px;
+                                    height: 2px;
+                                    background: #8657c4;
+                                    margin: 10px 0;
+                                }
+        
+                                figure {
+                                    width: 100%;
+                                    margin:0;
+                                    padding: 20px 0;
+                                    text-align: center;
+                                    position: relative;
+
+                                    div{
+                                        width: 100%;
+                                        img {
+                                            width: 50px;
+                                            margin-right: 55px;
+                                        }
+                                        p {
+                                            // display: none;
+                                            font-size: 25px;
+                                            color: #8657c4;
+                                            margin: 0;
+                                            position: absolute;
+                                            top: 20%;
+                                            left: 55%;                                        
+                                            animation: count ease-in 5s;
+                                        }
+                                        figcaption {                                            
+                                            width: 100%;
+                                            position: sticky;
+                                            top: 0%;
+                                            left: 0%;
+                                            font-size: 13px;
+                                            white-space: pre-line;
+                                            animation: font 3s ease-in .5s;
+                                            color: #414350;
+                                            
+                                        }
+                                    }                                 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }  
+}
+
+@media (min-width:765px) and (max-width:1080px){
+    .index{
+        overflow: auto;
+        .main{
+            .profile {
+                width: 100%;
+        
+                .my_self {
+                    width: 100%;
+                    position: relative;
+        
+                    .left {
+                        background: white;
+                        position: static;
+                        z-index: 0;
+                        width: 100%;
+                        height: 100vh;
+                        border-right: none;
+                        border-bottom: 1px solid #414350;
+        
+                        .logo {
+                            // height: 150px;
+                            :hover{
+                                animation: shake 0.5s infinite;
+                            }    
+                            h1 {
+                                color: #8657C4;
+                                font-size: 180px;
+                                position: absolute;
+                                left: 20%;
+                                bottom: 17%;
+                                margin: 0;
+                            }
+        
+                            p {
+                                color: #8657C4;
+                                font-size: 180px;
+                                position: absolute;
+                                left: 30%;
+                                bottom: 0;
+                                margin: 0;
+                            }
+                        }
+        
+                        .con {
+                            width: 100%;
+                            height: 100vh;
+                            .img {
+                                margin: 0 auto;
+                                width: 100%; height: 100%;
+                                margin-top:0px;
+                                position: relative;
+        
+                                img {
+                                    width: 220px;
+                                    position:absolute;
+                                    left: 50%;
+                                    top: 10%;
+                                    margin-left: 0;
+                                    transform: translateX(-50%);
+                                    box-shadow: 0px 0px 10px rgba(148, 71, 241, 0.5);
+                                }                          
+                                p{
+                                    margin: 0 auto;
+                                    width: 100%;
+                                    position:absolute;                             
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    text-align: center;
+                                    font-size: 20px;
+        
+                                }
+                                p:after{
+                                    content: '|';
+                                    animation: type 1s steps(1, end) infinite;
+                                }
+                            }                       
+                        }
+                    }
+                    .dot{
+                        display: none;
+                    }
+        
+                    .right {
+                        background:white;
+                        width: 100%;
+                        height: auto;
+                        overflow: auto;
+                        padding: 0 10%;
+                        margin: 0 auto;
+        
+                        .mbti {
+                            padding: 0;
+                            margin: 50px 0;
+                            article {
+                                width: 90%;
+                                margin: 0 auto;
+        
+                                h2 {
+                                    font-size: 30px;
+                                    color: #414350;
+                                    margin-bottom: 0;
+                                }
+        
+                                h2::after {
+                                    content: '';
+                                    display: block;
+                                    width: 300px;
+                                    height: 2px;
+                                    background: #8657c4;
+                                    margin: 10px 0;
+                                }
+        
+                                small {
+                                    font-size: 20px;
+                                    color: #414350;
+                                }
+        
+                                .img_box {
+                                    width: 100%;
+                                    border: 1px solid #ddd;
+                                    margin: 30px 0;
+                                    padding: 30px 0 50px 0;
+                                    text-align: center;
+        
+                                    img {
+                                        width: 350px;
+                                        margin: 40px 0;
+                                    }
+        
+                                    ul {
+                                        width: 100%;
+                                        margin: 0 auto;
+                                        padding: 0;
+        
+                                        li {
+                                            color: #414350;
+                                            text-align: center;
+                                            list-style: none;
+                                            line-height: 2;
+                                            font-size: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+        
+                        .center {
+                            width: 100%;
+                            overflow: auto;
+                            padding: 0;
+                            margin: 0 auto;
+        
+                            .edu {
+                                width: 100%;
+                                margin: 30px 0;
+                                float: none;
+        
+                                article {
+                                    width: 90%;
+                                    margin: 0 auto;
+        
+                                    h2 {
+                                        font-size: 30px;
+                                        color: #414350;
+                                        margin-bottom: 0;
+                                    }
+        
+                                    h2::after {
+                                        content: '';
+                                        display: block;
+                                        width: 300px;
+                                        height: 2px;
+                                        background: #8657c4;
+                                        margin: 10px 0;
+                                    }
+        
+                                    ul {
+                                        width: 90%;
+                                        margin: 0;
+                                        padding: 0 10px;
+        
+                                        li {
+                                            white-space: pre-line;
+                                            line-height: 1;
+                                            margin-bottom: 20px;
+                                            text-align: left;
+                                            list-style: none;
+                                            font-size: 18px;
+                                        }
+                                    }
+                                }
+                            }
+        
+                            .cer {
+                                width: 100%;
+                                float: none;
+                                margin: 30px 0;
+        
+                                article {
+                                    width: 90%;
+                                    margin: 0 auto;
+        
+                                    h2 {
+                                        font-size: 30px;
+                                        color: #414350;
+                                        margin-bottom: 0;
+                                    }
+        
+                                    h2::after {
+                                        content: '';
+                                        display: block;
+                                        width: 300px;
+                                        height: 2px;
+                                        background: #8657c4;
+                                        margin: 10px 0;
+                                    }
+        
+                                    ul {
+                                        width: 90%;
+                                        margin: 0;
+                                        padding: 0 10px;
+        
+                                        li {
+                                            white-space: pre-line;
+                                            line-height: 1;
+                                            margin-bottom: 20px;
+                                            text-align: left;
+                                            list-style: none;
+                                            font-size: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+        
+                        .skill {
+                            width: 100%;
+                            padding: 0;
+                            margin: 30px 0;
+                            article {
+                                width: 90%;
+                                margin: 0 auto;
+        
+                                h2 {
+                                    font-size: 30px;
+                                    color: #414350;
+                                    margin-bottom: 0;
+                                }
+        
+                                h2::after {
+                                    content: '';
+                                    display: block;
+                                    width: 300px;
+                                    height: 2px;
+                                    background: #8657c4;
+                                    margin: 10px 0;
+                                }
+        
+                                figure {
+                                    width: 100%;
+                                    margin: 20px 0;
+                                    position: relative;
+
+                                    div{
+                                        width: 100%;
+                                        img {
+                                            width: 50px;
+                                        }
+                                    }
+                                   
+                                    p {
+                                        font-size: 30px;
+                                        color: #8657c4;
+                                        margin: 0;
+                                        position: absolute;
+                                        top: 10%;
+                                        left: 12%;
+                                        
+                                        animation: count ease-in 5s;
+                                    }
+                                    figcaption {
+                                        width: 90%;
+                                        position: absolute;
+                                        top: -25%;
+                                        left: 24%;
+                                        font-size: 16px;
+                                        white-space: pre-line;
+                                        animation: font 3s ease-in .5s;
+                                        color: #414350;
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
+}

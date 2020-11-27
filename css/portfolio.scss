@@ -1,0 +1,1280 @@
+@import url("common.css");
+
+body {
+    margin: 0;
+}
+
+body.active {
+    background: #414350;
+}
+
+//그라데이션 컬러
+//#e098c8 #d3b7dc #b7b9dc
+// background: linear-gradient(to bottom, #e098c8, #d3b7dc, #b7b9dc);
+// background-origin: border-box;
+//border-image: linear-gradient(#e098c8, #d3b7dc, #b7b9dc) 1 / 5px;
+
+.index {
+    width: 100%;
+    height: 100vh;
+    transform-style: preserve-3d;
+    overflow: hidden;
+
+    .main {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        background: white;
+        position: relative;
+        transition: .5s;
+        transform: perspective(1000) rotateY(0deg);
+
+        .swiper_container {
+            // display: block;
+            width: 80%;
+            height: 700px;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            .slide {
+                width: 90%;
+                height: 650px;
+                margin: 0 auto;
+                // overflow: hidden;
+
+                section {
+                    width: 100%;
+                    height: 100%;
+                    transition: .5s;
+                    margin: 0;
+                    list-style: none;
+                    overflow: hidden;
+
+                    >img {
+                        width: 70%;
+                        height: 650px;
+                        display: inline-block;
+                    }
+
+                    .text_box {
+                        width: 30%;
+                        height: 650px;
+                        float: right;
+                        text-align: right;
+                        background: #eee;
+
+                        p {
+                            font-size: 20px;
+                        }
+
+                        h2 {
+                            font-size: 40px;
+                        }
+
+                        .comment {
+                            padding: 10% 0 20% 30%;
+                            margin-right: 30px;
+
+                            .color {
+                                width: 100%;
+                                height: 100%;
+
+                                figure {
+                                    margin: 0;
+
+                                    img {
+                                        width: 25px;
+                                        display: inline;
+                                    }
+                                }
+                            }
+                        }
+
+                        .popup_open {
+                            padding: 40% 0 0 10%;
+                            margin-right: 30px;
+
+                            a {
+                                cursor: pointer;
+                                outline-style: none;
+                                font-size: 25px;
+                                margin: 0 0 0 15px;
+                                padding: 5px 30px;
+                                border: none;
+                                background: #FFE0E0;
+                                color: #414350;
+                                border-radius: 5px;
+                                text-decoration: none;
+                            }
+
+                            a.active {
+                                background: #F797B2;
+                                transition: .5s;
+                            }
+                        }
+
+
+                    }
+                }
+            }
+        }
+    }
+
+    .popup_back {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background: rgba(0, 0, 0, 0.7) repeat;
+        display: none;
+    }
+
+    .popup {
+        width: 60%;
+        height: 80%;
+        border: none;
+        background: white;
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        text-align: center;
+        overflow-y: scroll;
+        display: none;
+
+        .popup_close {
+            width: 100%;
+            text-align: right;
+
+            img {
+                width: 30px;
+                height: 30px;
+                margin: 10px;
+            }
+        }
+
+        //하일리
+        .H_detail {
+            width: 100%;
+            margin: 0 auto;
+            color: #414350;
+
+            >section {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 50px;
+
+                img {
+                    width: 100%;
+                }
+
+                h2 {
+                    font-size: 30px;
+                    color: #AD74CE;
+                }
+
+                .D_name {
+                    p {
+                        font-size: 18px;
+                        white-space: pre-line;
+                        line-height: 1.5;
+                    }
+                }
+
+                .D_site_map {
+                    span {
+                        font-family: 'Poor Story', cursive;
+                        font-size: 18px;
+                        background: #333;
+                        color: white;
+                        padding: 10px 20px 10px 20px;
+                        margin: 0 10px;
+                    }
+                }
+
+                .D_break_point {
+                    span {
+                        font-size: 18px;
+                        border: 1px solid #424242;
+                        background: white;
+                        padding: 10px 20px 10px 20px;
+                        margin: 0 10px;
+                    }
+                }
+
+                .D_color {
+                    >img {
+                        width: 35px;
+                        margin: 0 3px;
+                    }
+                }
+
+                .D_font {
+                    p {
+                        font-family: 'Poor Story', cursive;
+                        font-weight: bold;
+                        white-space: pre-line;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .D_last_section {
+                position: relative;
+                width: 100%;
+                height: 250px;
+                margin: 0 auto;
+
+                >section {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0 auto;
+
+                    h2 {
+                        margin: 0;
+                        font-size: 30px;
+                        color: #AD74CE;
+                    }
+
+                    .D_skill {
+                        position: absolute;
+                        left: 8%;
+                        top: 10%;
+                        width: 20%;
+
+                        p {
+                            white-space: pre-line;
+                            font-size: 18px;
+                        }
+                    }
+
+                    .D_web {
+                        position: absolute;
+                        left: 50%;
+                        top: 8%;
+                        transform: translateX(-50%);
+                        width: 25%;
+                        overflow: hidden;
+
+                        span {
+                            font-size: 18px;
+                            white-space: pre-line;
+                        }
+
+                        span:nth-of-type(1) {
+                            float: left;
+                            text-align: left;
+                        }
+
+                        span:nth-of-type(2) {
+                            float: right;
+                            text-align: right;
+                        }
+                    }
+
+                    .D_process {
+                        position: absolute;
+                        right: 7%;
+                        top: 10%;
+                        width: 15%;
+                        overflow: hidden;
+
+                        span {
+                            font-size: 18px;
+                            white-space: pre-line;
+                        }
+
+                        span:nth-of-type(1) {
+                            float: left;
+                            text-align: left;
+                        }
+
+                        span:nth-of-type(2) {
+                            float: right;
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+        }
+
+        //투고샐러드
+        .S_detail {
+            width: 100%;
+            margin: 0 auto;
+            color: #414350;
+
+            >section {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 50px;
+
+                img {
+                    width: 100%;
+                }
+
+                h2 {
+                    font-size: 30px;
+                    color: #68b445;
+                    ;
+                }
+
+                .D_name {
+                    p {
+                        font-size: 18px;
+                        white-space: pre-line;
+                        line-height: 1.5;
+                    }
+
+                    img {
+                        width: 30%;
+                        height: 300px;
+                    }
+                }
+
+                .D_site_map {
+                    span {
+                        font-family: 'LG PC';
+                        font-size: 18px;
+                        background: white;
+                        color: #333;
+                        padding: 10px 20px 10px 20px;
+                        margin: 0 10px;
+                    }
+                }
+
+                .D_break_point {
+                    span {
+                        font-size: 18px;
+                        border: 1px solid #424242;
+                        background: white;
+                        padding: 10px 20px 10px 20px;
+                        margin: 0 10px;
+                    }
+                }
+
+                .D_color {
+                    >img {
+                        width: 35px;
+                        margin: 0 3px;
+                    }
+                }
+
+                .D_font {
+                    p {
+                        font-family: 'LG PC';
+                        white-space: pre-line;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .D_last_section {
+                position: relative;
+                width: 100%;
+                height: 250px;
+                margin: 0 auto;
+
+                >section {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0 auto;
+
+                    h2 {
+                        margin: 0;
+                        font-size: 30px;
+                        color: #68b445;
+                    }
+
+                    .D_skill {
+                        position: absolute;
+                        left: 8%;
+                        top: 10%;
+                        width: 20%;
+
+                        p {
+                            white-space: pre-line;
+                            font-size: 18px;
+                        }
+                    }
+
+                    .D_web {
+                        position: absolute;
+                        left: 50%;
+                        top: 8%;
+                        transform: translateX(-50%);
+                        width: 25%;
+                        overflow: hidden;
+
+                        span {
+                            font-size: 18px;
+                            white-space: pre-line;
+                        }
+
+                        span:nth-of-type(1) {
+                            float: left;
+                            text-align: left;
+                        }
+
+                        span:nth-of-type(2) {
+                            float: right;
+                            text-align: right;
+                        }
+                    }
+
+                    .D_process {
+                        position: absolute;
+                        right: 7%;
+                        top: 10%;
+                        width: 15%;
+                        overflow: hidden;
+
+                        span {
+                            font-size: 18px;
+                            white-space: pre-line;
+                        }
+
+                        span:nth-of-type(1) {
+                            float: left;
+                            text-align: left;
+                        }
+
+                        span:nth-of-type(2) {
+                            float: right;
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+        }
+
+        //장가네
+        .J_detail{
+            width: 100%;
+            margin: 0 auto;
+            color: #414350;
+            >img{
+                width: 100%;
+            }   
+        }
+
+        .look {
+            width: 100%;
+            margin: 50px 0;
+
+            >a {
+                cursor: pointer;
+                border: none;
+                font-size: 20px;
+                border-radius: 5px;
+                background: #FFE0E0;
+                padding: 10px 20px 10px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                color: #414350;
+                transition: .5s;
+            }
+
+            >a:hover {
+                background: #F797B2;
+                transition: .5s;
+            }
+
+            >a.active {
+                background: #F797B2;
+                transition: .5s;
+            }
+        }
+    }
+
+    .main.active {
+        transform: perspective(1000) rotateY(-10deg) translateX(100px);
+        transition: .8s;
+        overflow: hidden;
+    }
+}
+
+@media (max-width:480px) {
+    .index {
+        .main {
+            .swiper_container {
+                width: 80%;
+                height: 400px;
+                margin: 0 auto;
+                position: absolute;
+                left: 55%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+                .slide {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0 auto;
+                    // overflow: hidden;
+
+                    section {
+                        width: 100%;
+                        height: 100%;
+                        transition: .5s;
+                        margin: 0;
+                        list-style: none;
+                        overflow: hidden;
+
+                        >img {
+                            margin: 0 auto;
+                            width: 90%;
+                            height: 250px;
+                            display: block;
+                        }
+
+                        .text_box {
+                            width: 90%;
+                            height: 200px;
+                            margin: 0 auto;
+                            float: none;
+                            text-align: left;
+                            background: white;
+                            overflow: hidden;
+
+                            p {
+                                font-size: 15px;
+                            }
+
+                            h2 {
+                                font-size: 20px;
+                            }
+
+                            .comment {
+                                width: 50%;
+                                float: left;
+                                padding: 0;
+                                margin-right: 0;
+
+                                .color {
+                                    width: 100%;
+                                    height: 100%;
+
+                                    figure {
+                                        margin: 0;
+
+                                        img {
+                                            width: 20px;
+                                            display: inline;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .popup_open {
+                                float: right;
+                                padding: 50% 0 0 0;
+                                margin-right: 0;
+
+                                a {
+                                    cursor: pointer;
+                                    outline-style: none;
+                                    font-size: 20px;
+                                    margin: 0;
+                                    padding: 5px 30px;
+                                    border: none;
+                                    background: #FFE0E0;
+                                    color: #414350;
+                                    border-radius: 5px;
+                                    text-decoration: none;
+                                }
+
+                                a.active {
+                                    background: #F797B2;
+                                    transition: .5s;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .popup_back {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: rgba(0, 0, 0, 0.7) repeat;
+            display: none;
+        }
+
+        .popup {
+            width: 100%;
+            height: 100%;
+            padding-left: 50px;
+            border: none;
+            background: white;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            transform: translateX(0%);
+            z-index: 2;
+            text-align: center;
+            overflow-y: scroll;
+            display: none;
+
+            //하일리
+            .H_detail {
+                >section {
+                    h2 {
+                        font-size: 23px;
+                    }
+
+                    .D_name {
+                        p {
+                            font-size: 15px;
+                            white-space: pre-line;
+                        }
+                    }
+
+                    .D_site_map {
+                        span {
+                            font-family: 'Poor Story', cursive;
+                            width: 30%;
+                            font-size: 12px;
+                            background: #333;
+                            color: white;
+                            padding: 5px 10px;
+                            margin: 5px auto;
+                            display: block;
+                        }
+                    }
+
+                    .D_break_point {
+                        span {
+                            font-size: 12px;
+                            border: 1px solid #424242;
+                            background: white;
+                            padding: 10px 15px 10px 15px;
+                            margin: 0 auto;
+                        }
+                    }
+
+                    .D_color {
+                        >img {
+                            width: 35px;
+                            margin: 0 3px;
+                        }
+                    }
+
+                    .D_font {
+                        p {
+                            font-family: 'Poor Story', cursive;
+                            font-weight: bold;
+                            white-space: pre-line;
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+                .D_last_section {
+                    height: auto;
+
+                    >section {
+                        h2 {
+                            margin: 0;
+                            font-size: 20px;
+                            color: #AD74CE;
+                        }
+
+                        .D_skill {
+                            position: static;
+                            left: 0%;
+                            top: 0%;
+                            width: 100%;
+                            margin-bottom: 30px;
+
+                            p {
+                                white-space: pre-line;
+                                font-size: 15px;
+                            }
+                        }
+
+                        .D_web {
+                            position: static;
+                            left: 0%;
+                            top: 0%;
+                            transform: translateX(0%);
+                            width: 60%;
+                            overflow: hidden;
+                            margin: 0 auto;
+                            margin-bottom: 30px;
+
+                            span {
+                                font-size: 15px;
+                                white-space: pre-line;
+                            }
+
+                            span:nth-of-type(1) {
+                                float: left;
+                                text-align: left;
+                            }
+
+                            span:nth-of-type(2) {
+                                float: right;
+                                text-align: right;
+                            }
+                        }
+
+                        .D_process {
+                            position: static;
+                            right: 0%;
+                            top: 0%;
+                            width: 30%;
+                            overflow: hidden;
+                            margin: 0 auto;
+                            margin-bottom: 30px;
+
+                            span {
+                                font-size: 15px;
+                                white-space: pre-line;
+                            }
+
+                            span:nth-of-type(1) {
+                                float: left;
+                                text-align: left;
+                            }
+
+                            span:nth-of-type(2) {
+                                float: right;
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //투고샐러드
+            .S_detail {
+                >section {
+                    h2 {
+                        font-size: 23px;
+                    }
+
+                    .D_name {
+                        p {
+                            font-size: 15px;
+                            white-space: pre-line;
+                            padding: 0 5px;
+                        }
+
+                        img {
+                            width: 80%;
+                            height: 250px;
+                        }
+                    }
+
+                    .D_site_map {
+                        span {
+                            font-family: 'LG PC';
+                            font-size: 12px;
+                            background: white;
+                            color: #333;
+                            padding: 5px 10px 5px 10px;
+                            margin: 0;
+                        }
+                    }
+
+                    .D_break_point {
+                        span {
+                            font-size: 12px;
+                            border: 1px solid #424242;
+                            background: white;
+                            padding: 10px 15px 10px 15px;
+                            margin: 0 5px;
+                        }
+                    }
+
+                    .D_color {
+                        >img {
+                            width: 35px;
+                            margin: 0 3px;
+                        }
+                    }
+
+                    .D_font {
+                        p {
+                            font-family: 'LG PC';
+                            white-space: pre-line;
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+                .D_last_section {
+                    height: auto;
+                    >section{
+                        h2 {
+                            margin: 0;
+                            font-size: 20px;
+                        }
+    
+                        .D_skill {
+                            position: static;
+                            left: 0%;
+                            top: 0%;
+                            width: 100%;
+                            margin-bottom: 30px;
+    
+                            p {
+                                white-space: pre-line;
+                                font-size: 15px;
+                            }
+                        }
+    
+                        .D_web {
+                            position: static;
+                            left: 0%;
+                            top: 0%;
+                            transform: translateX(0%);
+                            width: 60%;
+                            overflow: hidden;
+                            margin: 0 auto;
+                            margin-bottom: 30px;
+    
+                            span {
+                                font-size: 14px;
+                                white-space: pre-line;
+                            }
+    
+                            span:nth-of-type(1) {
+                                float: left;
+                                text-align: left;
+                            }
+    
+                            span:nth-of-type(2) {
+                                float: right;
+                                text-align: right;
+                            }
+                        }
+    
+                        .D_process {
+                            position: static;
+                            right: 0%;
+                            top: 0%;
+                            width: 30%;
+                            overflow: hidden;
+                            margin: 0 auto;
+                            margin-bottom: 30px;
+    
+                            span {
+                                font-size: 15px;
+                                white-space: pre-line;
+                            }
+    
+                            span:nth-of-type(1) {
+                                float: left;
+                                text-align: left;
+                            }
+    
+                            span:nth-of-type(2) {
+                                float: right;
+                                text-align: right;
+                            }
+                        }
+                    }                    
+                }
+            }
+
+            //장가네
+
+
+            >a {
+                display: none;
+            }
+            .popup_close {
+                width: 100%;
+                text-align: right;
+    
+                img {
+                    width: 20px;
+                    height: 20px;
+                    margin: 10px;
+                }
+            }
+            .look {
+                width: 100%;
+                margin: 30px 0;
+    
+                >a {
+                    cursor: pointer;
+                    border: none;
+                    font-size: 16px;
+                    border-radius: 5px;
+                    background: #FFE0E0;
+                    padding: 13px 18px 13px 18px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    color: #414350;
+                    transition: .5s;
+                }
+    
+                >a:hover {
+                    background: #F797B2;
+                    transition: .5s;
+                }
+    
+                >a.active {
+                    background: #F797B2;
+                    transition: .5s;
+                }
+            }
+        }        
+    }
+
+    .main.active {
+        transform: perspective(1000) rotateY(-10deg) translateX(100px);
+        transition: .8s;
+        overflow: hidden;
+    }
+}
+
+@media (min-width:765px) and (max-width:1080px) {
+    .index {
+        .main {
+            .swiper_container {
+                width: 80%;
+                height: 700px;
+                margin: 0 auto;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+                .slide {
+                    width: 90%;
+                    height: 100%;
+                    margin: 0 auto;
+                    // overflow: hidden;
+
+                    section {
+                        width: 100%;
+                        height: 100%;
+                        transition: .5s;
+                        margin: 0;
+                        list-style: none;
+                        overflow: hidden;
+
+                        >img {
+                            width: 100%;
+                            height: 500px;
+                            display: block;
+                        }
+
+                        .text_box {
+                            width: 100%;
+                            height: 100%;
+                            float: none;
+                            text-align: left;
+                            background: white;
+                            // padding:0 30px 0 30px;
+                            overflow: hidden;
+
+                            p {
+                                font-size: 20px;
+                            }
+
+                            h2 {
+                                font-size: 35px;
+                            }
+
+                            .comment {
+                                width: 60%;
+                                float: left;
+                                padding: 0;
+                                margin-right: 30px;
+
+                                .color {
+                                    width: 100%;
+                                    height: 100%;
+
+                                    figure {
+                                        margin: 0;
+
+                                        img {
+                                            width: 24px;
+                                            display: inline;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .popup_open {
+                                float: right;
+                                padding: 20% 0 0 0;
+                                margin-right: 0;
+
+                                a {
+                                    cursor: pointer;
+                                    outline-style: none;
+                                    font-size: 25px;
+                                    margin: 0;
+                                    padding: 5px 30px;
+                                    border: none;
+                                    background: #FFE0E0;
+                                    color: #414350;
+                                    border-radius: 5px;
+                                    text-decoration: none;
+                                }
+
+                                a.active {
+                                    background: #F797B2;
+                                    transition: .5s;
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+            }
+        }
+
+        .popup_back {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: rgba(0, 0, 0, 0.7) repeat;
+            display: none;
+        }
+
+        .popup {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+            position: fixed;
+            top: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            text-align: center;
+            overflow-y: scroll;
+            display: none;
+
+            //하일리
+            .H_detail {
+                >section {
+                    h2 {
+                        font-size: 28px;
+                    }
+                }
+
+                .D_last_section {
+                    >section {
+                        h2 {
+                            margin: 0;
+                            font-size: 28px;
+                            color: #AD74CE;
+                        }
+
+                        .D_skill {
+                            position: absolute;
+                            left: 8%;
+                            top: 10%;
+                            width: 15%;
+
+                            p {
+                                white-space: pre-line;
+                                font-size: 18px;
+                            }
+                        }
+
+                        .D_web {
+                            position: absolute;
+                            left: 50%;
+                            top: 8%;
+                            transform: translateX(-50%);
+                            width: 32%;
+                            overflow: hidden;
+
+                            span {
+                                font-size: 18px;
+                                white-space: pre-line;
+                            }
+
+                            span:nth-of-type(1) {
+                                float: left;
+                                text-align: left;
+                            }
+
+                            span:nth-of-type(2) {
+                                float: right;
+                                text-align: right;
+                            }
+                        }
+
+                        .D_process {
+                            position: absolute;
+                            right: 7%;
+                            top: 10%;
+                            width: 15%;
+                            overflow: hidden;
+
+                            span {
+                                font-size: 18px;
+                                white-space: pre-line;
+                            }
+
+                            span:nth-of-type(1) {
+                                float: left;
+                                text-align: left;
+                            }
+
+                            span:nth-of-type(2) {
+                                float: right;
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //투고샐러드
+            .S_detail {
+                >section {
+                    h2 {
+                        font-size: 28px;
+                    }
+                }
+
+                .D_last_section {
+                    >section {
+                        h2 {
+                            margin: 0;
+                            font-size: 28px;
+                        }
+                        .D_skill {
+                            position: absolute;
+                            left: 8%;
+                            top: 10%;
+                            width: 15%;
+    
+                            p {
+                                white-space: pre-line;
+                                font-size: 18px;
+                            }
+                        }
+    
+                        .D_web {
+                            position: absolute;
+                            left: 50%;
+                            top: 8%;
+                            transform: translateX(-50%);
+                            width: 32%;
+                            overflow: hidden;
+    
+                            span {
+                                font-size: 18px;
+                                white-space: pre-line;
+                            }
+    
+                            span:nth-of-type(1) {
+                                float: left;
+                                text-align: left;
+                            }
+    
+                            span:nth-of-type(2) {
+                                float: right;
+                                text-align: right;
+                            }
+                        }
+    
+                        .D_process {
+                            position: absolute;
+                            right: 7%;
+                            top: 10%;
+                            width: 15%;
+                            overflow: hidden;
+    
+                            span {
+                                font-size: 18px;
+                                white-space: pre-line;
+                            }
+    
+                            span:nth-of-type(1) {
+                                float: left;
+                                text-align: left;
+                            }
+    
+                            span:nth-of-type(2) {
+                                float: right;
+                                text-align: right;
+                            }
+                        }
+                    }                   
+                }
+            }
+
+            //장가네
+
+
+            >a {
+                display: none;
+            }
+            .popup_close {
+                width: 100%;
+                text-align: right;
+    
+                img {
+                    width: 30px;
+                    height: 30px;
+                    margin: 10px;
+                }
+            }
+            .look {
+                width: 100%;
+                margin: 50px 0;
+    
+                >a {
+                    cursor: pointer;
+                    border: none;
+                    font-size: 20px;
+                    border-radius: 5px;
+                    background: #FFE0E0;
+                    padding: 10px 20px 10px 20px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    color: #414350;
+                    transition: .5s;
+                }
+    
+                >a:hover {
+                    background: #F797B2;
+                    transition: .5s;
+                }
+    
+                >a.active {
+                    background: #F797B2;
+                    transition: .5s;
+                }
+            }
+        }              
+    }
+
+    .main.active {
+        transform: perspective(1000) rotateY(-10deg) translateX(100px);
+        transition: .8s;
+        overflow: hidden;
+    }
+}

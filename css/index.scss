@@ -1,0 +1,212 @@
+@import url("common.css");
+
+@keyframes up {
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes click{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
+
+@keyframes  shadow{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transition: .3;
+        box-shadow: 15px 15px 10px rgba(0, 0, 0, 1);
+    }
+}
+//그라데이션 컬러
+//#e098c8 #d3b7dc #b7b9dc
+// background: linear-gradient(to bottom, #e098c8, #d3b7dc, #b7b9dc);
+// background-origin: border-box;
+
+.Loader {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 2s;
+
+    .main {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, #e098c8, #d3b7dc, #b7b9dc);
+
+        .box {
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            .text {
+                cursor: pointer;
+                list-style: none;
+                background: white;
+                color: black;
+                margin: 0 auto;
+                padding: 50px 80px;
+                width: 40%;
+                height: 400px;
+                align-items: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                mix-blend-mode: overlay;
+                opacity: 1;
+                transition: .5s;
+
+                // mix-blend-mode: screen;
+
+                h1 {
+                    margin: 0 auto;
+                    text-align: left;
+                    font-size: 70px;
+                    animation: up 500ms linear .5s forwards;
+                    opacity: 0;
+                }
+                h1:after{
+                    content: '';
+                    width: 0%;
+                    height: 2px;
+                    display: block;
+                    background: #d3b7dc;
+                    transition: .3s;
+                    position: absolute;
+                    left: 0%;
+                    bottom: 0%;
+                }                
+
+                p {
+                    text-align: left;
+                    font-size: 20px;
+                    margin-top: 40px;
+                    margin-bottom: 0;
+                    animation: up 500ms linear 1s forwards ;
+                    opacity: 0;
+                }
+            }
+            .text:hover h1:after{
+                content: '';
+                width: 100%;
+                height: 3px;
+                display: block;
+                background: #d3b7dc;
+                transition: .3s;
+            }
+
+            .text:hover {
+                box-shadow: 15px 15px 10px rgba(0, 0, 0, 1);
+                transition: .5s;
+            }
+
+            .text.active {
+                opacity: 0;
+                transition: 2s;
+            }
+        }
+        img{
+            width: 2%;
+            position: absolute;
+            bottom: 32%;
+            right: 32%;
+            transform: rotate(-30deg); 
+            opacity: 0;
+            animation: click 1s linear 2s infinite;     
+        }
+    }
+}
+
+.Loader.active {
+    transform: translateX(-97.7%);
+    transition: 1.1s;
+    z-index: 0;
+}
+
+@media (max-width:480px){
+    .Loader{
+        .main{
+            .box{
+                .text{
+                    width: 80%;
+                    height: 200px;
+                    padding: 40px 40px;
+                    .title{
+                        h1{
+                            font-size: 25px;
+                        }                       
+                    }
+                    p{
+                        font-size: 12px;
+                        margin-top: 30px;
+                    }
+                    animation: shadow 2s ease-in forwards;
+                }
+ 
+                img{   
+                    width: 6%;                
+                    bottom: 38%;
+                    right: 18%;
+                }
+            }
+        }
+    }
+    .Loader.active {
+     transform: translateX(-90%);
+     transition: 1.1s;
+     z-index: 0;
+     }
+ }
+
+@media (min-width:765px) and (max-width:1080px){
+   .Loader{
+       .main{
+           .box{
+               .text{
+                   width: 60%;
+                   height: 300px;
+                   padding: 60px 70px;
+                   .title{
+                       h1{
+                           font-size: 40px;
+                       }                       
+                   }
+                   p{
+                       font-size: 15px;
+                   }
+                   animation: shadow 2s ease-in forwards;
+               }
+
+               img{   
+                   width: 3%;                
+                   bottom: 40%;
+                   right: 30%;
+               }
+           }
+       }
+   }
+   .Loader.active {
+    transform: translateX(-93.5%);
+    transition: 1.1s;
+    z-index: 0;
+    }
+}

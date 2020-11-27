@@ -1,0 +1,81 @@
+@import url("common.css");
+.Loader {
+  z-index: 9999;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.Loader .main {
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e098c8), color-stop(#d3b7dc), to(#b7b9dc));
+  background: linear-gradient(to bottom, #e098c8, #d3b7dc, #b7b9dc);
+}
+
+.Loader .main .box {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.Loader .main .box .text {
+  cursor: pointer;
+  background: white;
+  color: black;
+  margin: 0 auto;
+  padding: 50px 80px;
+  width: 40%;
+  height: 400px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  mix-blend-mode: overlay;
+  opacity: 1;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.Loader .main .box .text h1 {
+  margin: 0 auto;
+  text-align: left;
+  font-size: 70px;
+}
+
+.Loader .main .box .text p {
+  text-align: left;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.Loader .main .box .text:hover {
+  -webkit-box-shadow: 15px 15px 10px black;
+          box-shadow: 15px 15px 10px black;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.Loader .main .box .text.active {
+  opacity: 0;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.Loader.active {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: 2.5s;
+  transition: 2.5s;
+}
+/*# sourceMappingURL=loader.css.map */
