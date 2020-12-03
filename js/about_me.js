@@ -1,4 +1,4 @@
-$(function () { //스크롤
+function about() { //스크롤
     var offset = [];
     for (var i = 0; i < $('.right > div').length; i++) {
         offset.push($('.right > div').eq(i).offset().top);
@@ -9,7 +9,7 @@ $(function () { //스크롤
     setTimeout(function () { Rskill = $('.skill').offset().top - $(window).height(); }, 300);
     $('.right').on('scroll', function(){
         if($(this).scrollTop() > Rskill){
-            $('.skill').addClass('active');
+                        $('.skill').addClass('active');
             if (RskillSet) {
                 skill();
                 RskillSet = false;
@@ -81,4 +81,6 @@ $(function () { //스크롤
         counter(xd, "#xd")
         counter(ps, "#ps")
     }
-});
+}
+
+export default about;

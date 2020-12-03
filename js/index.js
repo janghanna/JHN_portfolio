@@ -9,7 +9,7 @@ $(function () { //index화면 옆으로 사라락
             text.classList.toggle('active');
             
             setTimeout(function () { location.href = "about_me.html"; }, 1000);       
-            localStorage.page=0
+            localStorage.page=0;
         });
     }
     localStorage.clear();
@@ -20,4 +20,6 @@ $(function () { //index화면 옆으로 사라락
     //     $(this).addClass('active');
     // });    
     loading();
+    console.log('export');
+
 });

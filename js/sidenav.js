@@ -1,4 +1,5 @@
-$(function () { //sidenav 사라락
+function sideMenu() {
+    //sidenav 사라락
     $('header').load('inc_head.html header .sidenav', sidenav);
 
     function sidenav() {
@@ -38,5 +39,8 @@ $(function () { //sidenav 사라락
         //     $(this).addClass('active');
         // });
     }
-    sidenav();
-});
+    
+}
+export default sideMenu;
+
+ 

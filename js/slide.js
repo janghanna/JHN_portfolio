@@ -1,4 +1,4 @@
-$(function () {
+function slide() {
     //slice_box - slide - section
     $('.slide').slick({ //슬라이드할 아이템의 부모
         dots: true, //하단에  페이지 버튼
@@ -30,4 +30,5 @@ $(function () {
         }
    }));
    
-});
+}
+export default slide;

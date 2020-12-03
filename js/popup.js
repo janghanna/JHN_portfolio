@@ -1,4 +1,4 @@
-$(function () {
+function popup() {
     //PC버전-top    
     $('.top').on('click',function(e){
         e.preventDefault();
@@ -47,4 +47,5 @@ $(function () {
         $('.popup_back').hide();
         $('.popup').scrollTop(0);
     });     
-});
+}
+export default popup;

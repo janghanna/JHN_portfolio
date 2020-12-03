@@ -1,0 +1,265 @@
+@import url("common.css");
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 20px;
+  }
+}
+
+.index {
+  width: 100%;
+  background: #000;
+}
+
+.index .sidenav .nav {
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: white;
+  border: 1px solid white;
+  -o-border-image: linear-gradient(#e098c8, #d3b7dc, #b7b9dc) 1/5px;
+     border-image: -webkit-gradient(linear, left top, left bottom, from(#e098c8), color-stop(#d3b7dc), to(#b7b9dc)) 1/5px;
+     border-image: linear-gradient(#e098c8, #d3b7dc, #b7b9dc) 1/5px;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.index .sidenav .nav .title {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.index .sidenav .nav .title h1 {
+  margin: 0 auto;
+  font-size: 60px;
+  margin-top: 50%;
+}
+
+.index .sidenav .nav .title h1 img {
+  margin-left: -2%;
+}
+
+.index .sidenav .nav .sub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.index .sidenav .nav .sub a {
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  color: #414350;
+  display: block;
+}
+
+.index .sidenav .nav .sub :hover {
+  color: #8657c4;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.index .sidenav .nav .sub :active {
+  color: #8657c4;
+}
+
+.index .sidenav .nav :nth-of-type(1) {
+  top: 45%;
+}
+
+.index .sidenav .nav :nth-of-type(2) {
+  top: 55%;
+}
+
+.index .sidenav .nav .active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.index .sidenav .menu-trigger {
+  width: 50px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e098c8), color-stop(#d3b7dc), to(#b7b9dc));
+  background: linear-gradient(to bottom, #e098c8, #d3b7dc, #b7b9dc);
+}
+
+.index .sidenav .menu-trigger span {
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  background: #414350;
+}
+
+.index .sidenav .menu-trigger span .active {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+  background: #8657c4;
+}
+
+.index .sidenav .menu-trigger .active {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+.index .main {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  border: 1px solid hotpink;
+  background: white;
+  position: relative;
+  margin-left: 50px;
+}
+
+.index .main .btn {
+  font-size: 50px;
+  position: absolute;
+  top: 47%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.index .main .btn .prev {
+  float: left;
+  margin-left: 3%;
+  background: none;
+  border: none;
+  color: skyblue;
+}
+
+.index .main .btn .next {
+  float: right;
+  margin-right: 3%;
+  background: none;
+  border: none;
+  color: slateblue;
+}
+
+.index .main section {
+  width: 75%;
+  height: 650px;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 3px solid gold;
+}
+
+.index .main section ul {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 650px;
+  border: 3px solid tomato;
+}
+
+.index .main section ul li {
+  margin: 0 auto;
+  display: block;
+  height: 650px;
+  border: 3px solid blue;
+}
+
+.index .main section ul li .contents {
+  position: relative;
+  margin: 0;
+}
+
+.index .main section ul li .contents img {
+  width: 70%;
+  height: 650px;
+  margin-right: 50%;
+}
+
+.index .main section ul li .contents .text_box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  width: 30%;
+  height: 650px;
+  background: #eee;
+  text-align: center;
+}
+
+.index .main section ul li .contents .text_box .comment {
+  text-align: right;
+  display: inline-block;
+  padding: 10% 0 20% 30%;
+}
+
+.index .main section ul li .contents .text_box .comment p {
+  font-size: 20px;
+}
+
+.index .main section ul li .contents .text_box .comment h2 {
+  font-size: 40px;
+}
+
+.index .main section ul li .contents .text_box .comment .color {
+  width: 100%;
+  height: 22px;
+  position: relative;
+}
+
+.index .main section ul li .contents .text_box .comment .color span {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 45%;
+  top: 0;
+  border: 1px solid #ad74ce;
+  border-radius: 50%;
+  background: #ad74ce;
+}
+
+.index .main section ul li .contents .text_box .comment .color span:nth-of-type(2) {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 30%;
+  top: 0;
+  border: 1px solid #fcfbe3;
+  border-radius: 50%;
+  background: #fcfbe3;
+}
+
+.index .main section ul li .contents .text_box .comment .color span:nth-of-type(3) {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 15%;
+  top: 0;
+  border: 1px solid #333;
+  border-radius: 50%;
+  background: #333;
+}
+
+.index .main section ul li .contents .text_box .comment .color span:nth-of-type(4) {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 1px solid #333;
+  border-radius: 50%;
+  background: #ddd;
+}
+/*# sourceMappingURL=hailli.css.map */
