@@ -229,11 +229,94 @@
         outline-style: none;
     }
 }
+
+@media (min-width:500px) and (max-width:760px){
+    .swiper_container .slick-prev, .swiper_container .slick-next{
+        display: none;
+    }
+    .slide .slick-dots{
+        top: -7%;
+    }
+}
+
 @media (min-width:765px) and (max-width:1080px){
     .swiper_container .slick-prev, .swiper_container .slick-next{
         display: none;
     }
     .slide .slick-dots{
         top: -5%;
+    }
+}
+
+@media (min-width:2000px){
+    .swiper_container .slick-prev, .swiper_container .slick-next {
+        border: none;
+        border-radius: 10%;
+        font-size: 0;
+        width: 5vw;
+        height: 5vh;
+        position: absolute;
+        top: 55%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.0);
+        z-index: 5;
+        outline-style: none;
+    }
+    .swiper_container .slick-prev:hover, .swiper_container .slick-next:hover{
+        background: rgba(0,0,0,0.1);
+    }
+    
+    .swiper_container .slick-prev {
+        left: -10%;    
+    }
+    
+    .swiper_container .slick-next {
+        right: -10%;    
+    }
+    
+    .swiper_container .slick-prev:after {
+        content: '《';
+        font-size: 2.6vw;
+        color: rgb(44, 14, 244);
+    }
+    
+    .swiper_container .slick-next:after {
+        content: '》';
+        font-size: 2.6vw;
+        color: rgb(144, 14, 188);
+    }
+
+    .slide .slick-dots {
+        position: absolute;
+        bottom: -5%;
+        left: 50%;
+        transform: translateX(-50%);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .slide .slick-dots li {
+        display: inline-block;
+        margin: 0 50px;
+    }
+    
+    .slide .slick-dots li button {
+        width: 0.9vw;
+        height: 1.2vh;
+        border-radius: 50%;
+        background: #8657c4;
+        opacity: 0.5;
+        font-size: 0;
+        padding: 0;
+        border: none;
+        outline-style: none;
+    }
+    
+    .slide .slick-dots li.slick-active button {
+        width: 1.2vw; height: 1.5vh;
+        border: none;
+        opacity: 1;
+        outline-style: none;
     }
 }
